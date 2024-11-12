@@ -1,31 +1,25 @@
-
-
 /**
- * The Human class implements a wrapper for the base Creature class with the following additions
- * Implements a maximum/minimum strength for the creature type [30/1]
- * Implements a maximum/minimum hitpoint total for the creature type [200/40]
+ * Human is a kind of creature category. The private in formation here dictates the stat floor.
+ * Additionally within the constructor there lies a creatureType string to reference that the object is whatever the specified is.
  * 
  * @author Don Santiago
- * @version 2024.11.5
+ * @version 2024.11.11
  */
 public class Human extends Creature
 {
     // instance variables - replace the example below with your own
-    private static final int MAX_HUMAN_HP = 200;
-    private static final int MIN_HUMAN_HP = 40;
-    private static final int MAX_HUMAN_STR = 30;
-    private static final int MIN_HUMAN_STR = 8;
+    private static final int MAX_HUMAN_HP = 18;
+    private static final int MIN_HUMAN_HP = 10;
+    private static final int MAX_HUMAN_STR = 18;
+    private static final int MIN_HUMAN_STR = 5;
+    private String creatureType;
 
     /**
-     * Constructor for objects of class Human -
-     * Note that the calling class does not need to know anything about the 
-     * requirements of human minimum and maximum values
-     * 
-     * The instantiating class asks for a Human and the human class is responsible for
-     * return a Human object with values in the appropriate range
-     * 
+     * Constructor for object of a class titled "Human" -
+     * specifically we will store str value as well as hp value
+     * additionally we will also specify the creature type as a Human which may be referenced later down the line
      */
-    public Human()
+    public Human(int str, int hp)
     {
         // note how the class uses the static randomizer class to
         // generate the values. This localizes the need to know 
@@ -34,14 +28,16 @@ public class Human extends Creature
         // range + min ensures that the values don't start at one.
         super(
             Randomizer.nextInt(MAX_HUMAN_HP-MIN_HUMAN_HP)+MIN_HUMAN_HP,    
-            Randomizer.nextInt(MAX_HUMAN_STR-MIN_HUMAN_STR)+MIN_HUMAN_STR
-        );
-          
+            Randomizer.nextInt(MAX_HUMAN_STR-MIN_HUMAN_STR)+MIN_HUMAN_STR);
+            
+            this.creatureType="Human";
     }
     
-    
-    // attack() - not overridden because Humans generate basic damage
-    // takeDamage(int) - not overridden, because Humans take all damage assigned to them
-
-    
+    /**
+     *Override command for attacks
+     */
+    public int attack(){
+    int baseDamage=super.attack();
+    return baseDamage;    
+    }
 }
