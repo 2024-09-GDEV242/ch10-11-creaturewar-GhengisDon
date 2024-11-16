@@ -1,9 +1,8 @@
 /**
- * Human is a kind of creature category. The private in formation here dictates the stat floor.
- * Additionally within the constructor there lies a creatureType string to reference that the object is whatever the specified is.
+ * Human is a kind of creature.
  * 
  * @author Don Santiago
- * @version 2024.11.11
+ * @version 2024.11.15
  */
 public class Human extends Creature
 {
@@ -16,8 +15,12 @@ public class Human extends Creature
 
     /**
      * Constructor for object of a class titled "Human" -
-     * specifically we will store str value as well as hp value
-     * additionally we will also specify the creature type as a Human which may be referenced later down the line
+     * We will assign randomly a strength value and a hit point value.
+     * We will also assign its creature type here.
+     * 
+     * @param str, the strength value of a human
+     * @param hp, the hp value of a human
+     * 
      */
     public Human(int str, int hp)
     {
@@ -34,10 +37,23 @@ public class Human extends Creature
     }
     
     /**
-     *Override command for attacks
+     *Override command for attack inherited from creature.
+     *Calculate and return a damage value.
+     *
+     *@return the damage dealt by this particular kind of creature.
      */
     public int attack(){
     int baseDamage=super.attack();
     return baseDamage;    
+    }
+    
+    /**
+     * Override command for name inherited from creature.
+     * Replace the default name with whatever is written here in this field for each class.
+     * 
+     * @return a string that has a display name easily readable for non-machine folk.
+     */
+    public String getDisplayName(){
+        return "Human";
     }
 }

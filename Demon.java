@@ -2,14 +2,11 @@
 /**
  * Demon is a child class to Creature.
  * Demon is the parent class to both Cyber and Balrog.
- * With this being said the role of this class is to give certain behaviors to certain classes.
- * Within the constructor we store an hp value and str value which we will recieve from child classes.
- * Within the constructor we assign that objects that are extentions of this class are given "Demon" classification.
- * Within the attack method of this class we give all objects that have "Demon" classification the ability to hit a crit.
- * ADP is short for "Additional Plus Fifty".
+ * Demon has a 5% chance to land a crit.
+ * Superclasses such as this and Giant do not need to have override methods for names.
  *
  * @author Don Santiago
- * @version 2024.11.11
+ * @version 2024.11.15
  */
 public class Demon extends Creature
 {
@@ -39,6 +36,9 @@ public class Demon extends Creature
         return baseDamage;
     }
     
+    /**
+     * Declare creature type
+     */
     public String getCreatureType(){
         return creatureType;
     }

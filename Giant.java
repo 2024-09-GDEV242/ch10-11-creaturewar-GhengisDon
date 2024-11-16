@@ -1,9 +1,12 @@
 
 /**
- * Write a description of class Giant here.
+ * Giant is a child class of creature.
+ * Giant also happens to be the super class to the following classes HillG, MossG, and Jairon.
+ * Giant has a 15% chance to land a crit.
+ * Superclasses such as this and Demon do not have to have override methods for names.
  *
  * @author Don Santiago
- * @version 2024.11.11
+ * @version 2024.11.15
  */
 public class Giant extends Creature
 {
@@ -29,6 +32,9 @@ public class Giant extends Creature
         return baseDamage;
     }
     
+    /**
+     * Declare creature type
+     */
     public String getCreatureType(){
         return creatureType;
     }

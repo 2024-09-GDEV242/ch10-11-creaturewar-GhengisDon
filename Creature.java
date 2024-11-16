@@ -63,7 +63,7 @@ public abstract class Creature
      * @return true when current hit point level is greater than zero
      */
     public boolean isAlive() {
-        return hp > 0;
+        return this.hp > 0;
     }
     
     /**
@@ -71,7 +71,7 @@ public abstract class Creature
      * @return true when current hit point level is less than or equal to zero
      */
     public boolean isKnockedOut() {
-        return hp<=0;
+        return this.hp<=0;
     }
     
     /**
@@ -80,6 +80,14 @@ public abstract class Creature
      */
     public int getHp(){
         return hp;
+    }
+    
+    /**
+     * Get a display name
+     * @return display name that is easily readable for people
+     */
+    public String getDisplayName(){
+        return this.getClass().getSimpleName();
     }
     
     /**

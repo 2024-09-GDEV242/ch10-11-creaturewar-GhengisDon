@@ -1,13 +1,11 @@
 
 /**
- * Cyber is going to pass up information to Demon super class which will pass up information to the Creature super class.
- * There is nothing wildly different here with the exception of the the constructor.
- * For housekeeping every creature class regardless of area in the hierarchy will be stored as 
- * public variety (int str,int hp).
- *
+ * Cyber is a type of Demon.
+ * Cyber gets the ability to roll for crit chance that all Demon types share.
  * @author Don Santiago
- * @version 2024.11.11
+ * @version 2024.11.15
  */
+
 public class Cyber extends Demon
 {
     private static final int MAX_CYBER_HP = 100;
@@ -16,7 +14,13 @@ public class Cyber extends Demon
     private static final int MIN_CYBER_STR = 20;
 
     /**
-     * Constructor for objects of class Cyber
+     * Constructor for object of a class titled "Cyber" -
+     * We will assign randomly a strength value and a hit point value.
+     * 
+     * 
+     * @param str, the strength value of a cyber demon.
+     * @param hp, the hp value of a cyber demon.
+     * 
      */
     public Cyber(int str,int hp)
     {
@@ -25,10 +29,23 @@ public class Cyber extends Demon
     }
 
     /**
-     *Override command for attacks
+     *Override command for attack inherited from creature.
+     *Calculate and return a damage value.
+     *
+     *@return the damage dealt by this particular kind of creature. In the event of a critical hit deal an additional 50 points of damage as per Demon superclass.
      */
     public int attack(){
-    int baseDamage=super.attack();
-    return baseDamage;    
+        int baseDamage=super.attack();
+        return baseDamage;    
+    }
+    
+    /**
+     * Override command for name inherited from creature.
+     * Replace the default name with whatever is written here in this field for each class.
+     * 
+     * @return a string that has a display name easily readable for non-machine folk.
+     */
+    public String getDisplayName(){
+        return "Cyber Demon";
     }
 }
